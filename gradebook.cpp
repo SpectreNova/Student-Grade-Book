@@ -2,70 +2,81 @@
 #include <string>
 using namespace std;
 
+struct Student
+{
+    string name;
+    int id;
+    int marks;
+    string grade;
+};
+
+
 int main()
 {
-string name;
-int id;
-int marks;
+Student student;
 
 cout << "Enter Your Name: ";
-getline(cin, name);
+getline(cin, student.name);
 
 cout << "Enter Your ID: ";
-cin >> id;
+cin >> student.id;
 
 cout << "Enter Your Marks: ";
-cin >> marks;
+cin >> student.marks;
 
-cout << "Name: " << name << endl;
-cout << "ID: " << id << endl;
-cout << "Total marks: " << marks << endl;
+cout << "Name: " << student.name << endl;
+cout << "ID: " << student.id << endl;
+cout << "Total marks: " << student.marks << endl;
 
-if(marks < 0 || marks > 100)
+if(student.marks < 0 || student.marks > 100)
 {
     cout << "Invalid marks" << endl;
 }
 
-else if(marks >= 90)
+else if(student.marks >= 90)
 {
-    cout << "Grade: A" << endl;
+    student.grade = "A";
 }
 
-else if(marks >= 85)
+else if(student.marks >= 85)
 {
-    cout << "Grade: A-" << endl;
+    student.grade = "A-";
 }
 
-else if(marks >= 80)
+else if(student.marks >= 80)
 {
-    cout << "Grade: B" << endl;
+    student.grade = "B";
 }
 
-else if(marks >= 70)
+else if(student.marks >= 70)
 {
-    cout << "Grade: B-" << endl;
+    student.grade = "B-";
 }
 
-else if(marks >= 60)
+else if(student.marks >= 60)
 {
-    cout << "Grade: C" << endl;
+    student.grade = "C";
 }
 
-else if(marks >= 50)
+else if(student.marks >= 50)
 {
-    cout << "Grade: D" << endl;
+    student.grade = "D";
 }
 
-else if(marks >= 40)
+else if(student.marks >= 40)
 {
-    cout << "Grade: D-" << endl;
+    student.grade = "D-";
 }
 
 else
 {
-    cout << "Fail" << endl;
+    student.grade = "F";
 }
 
+if(student.marks >= 0 && student.marks <=100)
+{
+    cout << "Grade: " << student.grade << endl;
+}
 
 return 0;
 }
